@@ -4,12 +4,19 @@ import { AuthGuard } from '@core/security/auth.guard';
 import { ManageComponent } from './manage/manage.component';
 import { ReservationDetailResolverService } from './reservation-detail.resolver';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { GeneralBookingListComponent } from './generalreservation-list/generalreservation-list.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ReservationListComponent,
     data: { claimType: 'reservation_list' },
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'generalbookinglist/:id',
+    component: GeneralBookingListComponent,
+    data: { claimType: '' },
     canActivate: [AuthGuard]
   },
   {

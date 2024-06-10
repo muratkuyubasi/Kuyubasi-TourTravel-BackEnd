@@ -12,7 +12,50 @@
         </div>
     </div>
 
+
     <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{'TUR' | translate}}</th>
+                        <th>{{'PERIOD' | translate}}</th>
+                        <th>{{'TOTAL-NUMBER-OF-RESERVATİONS' | translate}}</th>
+                        <th>{{'STATUS' | translate}}</th>
+
+                        <th></th>
+                        
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let item of reservations">
+                        <td>{{item.activeTour.tourRecord.title}}</td>
+                        <td>{{item.activeTour.periodRecord.title}} ({{item.activeTour.startDate | date:'dd'}}/{{item.activeTour.endDate | date:'dd MM YYYY'}}) </td>
+                        
+                        <td class="name">{{item.activeTour.quota}}</td>
+
+                        <td>
+                            <span class="badge {{item.isCompleted? 'badge-primary': 'badge-danger'}} badge-primary">{{item.isActive ? 'Tamamlandı':'Beklemede'}}</span>
+                        </td>
+                        
+                        <td>
+                            <a class="btn btn-sm btn-warning ml-3" routerLink="/reservation/generalbookinglist/{{item.activeTourId}}">
+                            <i class='bx bx-show'></i> {{'VİEW-RESERVATİONS' | translate}}
+                            </a>
+                            <a class="btn btn-sm btn-danger ml-3" (click)="deleteReservation(item)">
+                                <i class='bx bx-show'></i> {{'DELETE' | translate}}
+                                </a>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- <div class="card-body">
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -50,5 +93,5 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> -->
 </div>

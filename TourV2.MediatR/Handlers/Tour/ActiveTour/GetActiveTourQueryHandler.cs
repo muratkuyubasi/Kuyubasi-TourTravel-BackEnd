@@ -44,7 +44,10 @@ namespace TourV2.MediatR.Handlers
                 .Include(x => x.TourReservations)
                 .ThenInclude(x => x.ReservationPersons)
                 .Include(x => x.TourDepartures)
+
                 .ThenInclude(x => x.DepartureRecord)
+                .Include(x => x.PeriodRecord)
+
                 .AsEnumerable()
                 .Select(s=> new ActiveTourDto
                 {
@@ -86,6 +89,7 @@ namespace TourV2.MediatR.Handlers
                         DepartureRecordId = d.DepartureRecordId,
                         ActiveTourId = d.ActiveTourId
                     }).ToList(),
+                    PeriodRecord= s.PeriodRecord,
                     
                 })
                 .FirstOrDefault();

@@ -3,6 +3,7 @@ using TourV2.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using TourV2.Data;
 using TourV2.Repository.PeriodEducation;
+using TourV2.Repository.Survey;
 
 namespace TourV2.Admin.Helpers
 {
@@ -54,9 +55,11 @@ namespace TourV2.Admin.Helpers
             services.AddScoped<IFrontAnnouncementRecordRepository, FrontAnnouncementRecordRepository>();
             services.AddScoped<ICostCalculationRepository, CostCalculationRepository>();
             services.AddScoped<IEducationFormRepository, EducationFormRepository>();
-            services.AddScoped<IMosqueRepository, MosqueRepository>();
             services.AddScoped<IStateRepository, StateRepository>();
+            services.AddScoped<IMosqueRepository, MosqueRepository>();
             services.AddScoped<IPeriodEducationRepository, PeriodEducationRepository>();
+            services.AddScoped<ISurveyRepository, SurveyRepository>();
+
         }
     }
 }

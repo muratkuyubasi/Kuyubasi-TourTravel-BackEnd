@@ -41,5 +41,6 @@ namespace TourV2.Data.Dto
         public  TourTransportation TourTransportation { get; set; }
         public List<TourComment> TourComments { get; set; }
         public List<TourClick> TourClicks { get; set; }
+        
     }
 }

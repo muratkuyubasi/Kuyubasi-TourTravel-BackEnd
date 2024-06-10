@@ -23,6 +23,8 @@ namespace TourV2.Admin.Helpers.Mapping
                 mc.AddProfile(new ContactProfile());
                 mc.AddProfile(new FrontAnnouncementProfile());
                 mc.AddProfile(new EducationFormProfile());
+                mc.AddProfile(new SurveyProfile());
+
             });
             return mappingConfig.CreateMapper();
         }

@@ -6,13 +6,15 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
 import { ReservationRoutingModule } from './reservation-routing.module';
 import { ReservationDetailResolverService } from './reservation-detail.resolver';
 import { ManageComponent } from './manage/manage.component';
+import { GeneralBookingListComponent } from './generalreservation-list/generalreservation-list.component';
 
 
 
 @NgModule({
   declarations: [
     ReservationListComponent,
-    ManageComponent
+    ManageComponent,
+    GeneralBookingListComponent
   ],
   imports: [
     CommonModule,

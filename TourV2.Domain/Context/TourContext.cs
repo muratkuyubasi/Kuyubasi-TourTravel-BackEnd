@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using TourV2.Data.Entities;
+using TourV2.Data.Entities.TourTravel;
 
 namespace TourV2.Domain
 {
@@ -60,6 +61,7 @@ namespace TourV2.Domain
         public DbSet <PeriodEducation> PeriodEducations { get; set; }
         public DbSet<State> States  { get; set; }
         public DbSet <Mosque>Mosques { get; set; }
+        public DbSet<Survey> Surveys { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

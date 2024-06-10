@@ -35,6 +35,9 @@ namespace TourV2.Admin.Helpers.Mapping
             CreateMap<TourClick, TourClickDto>().ReverseMap();
             CreateMap<CostCalculation, CostCalculationDto>().ReverseMap();
             CreateMap<CostCalculation, AddCostCalculationCommand>().ReverseMap();
+
+
+
         }
     }
 }

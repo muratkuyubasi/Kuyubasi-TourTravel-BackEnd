@@ -12,6 +12,7 @@ using TourV2.Helper;
 using TourV2.MediatR.Commands;
 using TourV2.MediatR.Handlers;
 using TourV2.MediatR.Queries;
+using TourV2.MediatR.Queries.Tour.Reservation;
 
 namespace TourV2.Admin.Controllers.Tour
 {
@@ -260,7 +261,7 @@ namespace TourV2.Admin.Controllers.Tour
                                 UserName = result.Data.DefaultSmtp.UserName,
                                 isAttechment = true,
                                 Attachments = attachmentList,
-                                CCAddress = "hakki.oezkan@net-turizm.eu"
+                                CCAddress = "rezervasyon@zsureisen.eu"
                             });
                         }
                         catch (Exception)
@@ -360,6 +361,39 @@ namespace TourV2.Admin.Controllers.Tour
             var deleteCommand = new DeleteTourReservationPersonCommand { Id = id };
             var result = await _mediator.Send(deleteCommand);
             return ReturnFormattedResponse(result);
+        }
+
+        /// <summary>
+        /// Get Active Tour By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("Test/{id}")]
+        [Authorize]
+        [Produces("application/json", "application/xml", Type = typeof(List<TourReservationDto>))]
+        public async Task<IActionResult> Test(int id)
+        {
+            var getQuery = new CreateCostCalculationCommand
+            {
+                ActiveTourId = id
+            };
+
+            var result = await _mediator.Send(getQuery);
+            return ReturnFormattedResponse(result);
+        }
+
+
+        /// <summary>
+        /// Get All Tours Reservation
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetAllTourReservationTourId")]
+        [Produces("application/json", "application/xml", Type = typeof(List<TourReservationDto>))]
+        public async Task<IActionResult> GetAllTourReservationTourId(int id)
+        {
+            var getAllQuery = new GetAllParticipantByTourIdQuery {TourId = id };
+            var result = await _mediator.Send(getAllQuery);
+            return Ok(result);
         }
 
     }

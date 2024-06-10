@@ -73,4 +73,12 @@ export class ReservationService {
         .pipe(catchError(this.commonHttpErrorService.handleError));
     }
 
+
+    getReservationTourId(id: string): Observable<any | CommonError> {
+      const url = `Reservation/GetAllTourReservationTourId?id=${id}`;
+
+      return this.httpClient.get<any>(url)
+        .pipe(catchError(this.commonHttpErrorService.handleError));
+    }
+
 }

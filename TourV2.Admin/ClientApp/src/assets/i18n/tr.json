@@ -299,7 +299,14 @@
   "STUDENT-NAME-SURNAME":"Öğrencinin Adı Soyadı",
   "STUDENT-GENDER":"Öğrencinin Cinsiyeti",
   "EXPORT_EXCEL": "EXCEL formatında indir",
-  "VALUES-EDUCATİON":"Değerler Eğitimi"
+  "VALUES-EDUCATİON":"Değerler Eğitimi",
+  "VİEW-RESERVATİONS":"Rezervasyonları Listele",
+  "TOUR-PRICES":"Tur Fiyatı",
+  "TOTAL-NUMBER-OF-RESERVATİONS":"Toplam Rezervasyon Sayısı",
+  "BOOKİNG-CODE":"Rezervasyon Kodu",
+  "PHONE-NUMBER":"Telefon Numarası",
+  "EMAİL-ADRESS":"Mail Adresi",
+  "QUESTİONNAİRE":"Anket"
 
 
 

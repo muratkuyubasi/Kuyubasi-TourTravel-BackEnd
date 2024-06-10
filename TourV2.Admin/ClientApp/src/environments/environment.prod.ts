@@ -4,10 +4,13 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://portal.zsureisen.eu/",
+  // apiUrl: "https://portal.zsureisen.eu/",
   // apiUrl:"https://localhost:44331/api",
   // serverUrl:"https://"
-  serverUrl: "https://portal.zsureisen.eu/"
+  // serverUrl: "https://portal.zsureisen.eu/"
+
+  apiUrl: "https://proje10.vakifglobal.com/",
+  serverUrl: "https://proje10.vakifglobal.com/"
 };
 /*
  * For easier debugging in development mode, you can import the following file
