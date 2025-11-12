@@ -48,11 +48,12 @@
         </ng-container>
         <ng-container matColumnDef="studentGender">
           <th mat-header-cell *matHeaderCellDef>{{ 'STUDENT-GENDER' | translate }}</th>
-          <td mat-cell *matCellDef="let candidate">{{ candidate?.studentGender === 0 ? 'Kız' : (candidate?.studentGender === 1 ? 'Erkek' :' ') }}</td>
+          <td mat-cell *matCellDef="let candidate">{{ candidate?.studentGender === 0 ? 'Kız' : (candidate?.studentGender
+            === 1 ? 'Erkek' :' ') }}</td>
         </ng-container>
 
-        
-      
+
+
         <!-- <ng-container matColumnDef="periodId">
           <th mat-header-cell *matHeaderCellDef>{{ 'PERIOD' | translate }}</th>
           <td mat-cell *matCellDef="let candidate">{{ candidate.periodId }}</td>
@@ -97,25 +98,25 @@
 
 <table id="excel-table" class="exportExcel">
   <tr>
-      <th>GENEL S. NO</th>
-      <th>Kayıt formunu dolduran kişi</th>
-      <th>Öğrencinin Adı Soyadı</th>
-      <th>Öğrencinin doğum tarihi</th>
-      <th>Öğrencinin cinsiyeti</th>
-      <th>Öğrencinin pasaport numarası</th>
-      <th>Öğrencinin uyruğu</th>
-      <th>Öğrencinin adresi</th>
-      <th>Öğrencinin cep telefon numarası (Almanya)</th>
-      <th>Öğrencinin cep telefon numarası (Türkiye)</th>
-      <th>Bağlı olduğunuz Din Hizmetleri Ataşeliği bölgesi</th>
-      <th>Cami</th>
-      <th>Hangi havaalanından uçmak istersiniz?</th>
-      <th>Pasaport</th>
-      <th>Kimlik</th>
-      <th>Dekont</th>
-      <th>Aktif öğrenci misiniz?</th>
+    <th>GENEL S. NO</th>
+    <th>Kayıt formunu dolduran kişi</th>
+    <th>Öğrencinin Adı Soyadı</th>
+    <th>Öğrencinin doğum tarihi</th>
+    <th>Öğrencinin cinsiyeti</th>
+    <th>Öğrencinin pasaport numarası</th>
+    <th>Öğrencinin uyruğu</th>
+    <th>Öğrencinin adresi</th>
+    <th>Öğrencinin cep telefon numarası (Almanya)</th>
+    <th>Öğrencinin cep telefon numarası (Türkiye)</th>
+    <th>Bağlı olduğunuz Din Hizmetleri Ataşeliği bölgesi</th>
+    <th>Cami</th>
+    <th>Hangi havaalanından uçmak istersiniz?</th>
+    <th>Pasaport</th>
+    <th>Kimlik</th>
+    <th>Dekont</th>
+    <th>Aktif öğrenci misiniz?</th>
 
-      <!-- <th>Gezi ücretini havale ettiniz mi?</th>
+    <!-- <th>Gezi ücretini havale ettiniz mi?</th>
       <th>Öğrencinin Babasının Adı Soyadı</th>
       <th>Öğrencinin Babasının Telefonu</th>
       <th>Öğrencinin Annesinin Adı Soyadı</th>
@@ -127,31 +128,42 @@
       <th>Lütfen havale dekontundaki havale işlem numarasını giriniz</th> -->
   </tr>
   <tr *ngFor="let item of candidate; let i =index">
-      <td>{{i+1}}</td>
-      <td>{{ item?.personType=== 1 ? 'Öğrencinin annesiyim' : item?.personType === 2 ? 'Öğrencinin babasıyım' :
-          (item?.personType === 3 ? 'Cami din görevlisiyim' : (item?.personType === 4 ? 'Diğer' : ' '))}}</td>
-      <td>{{ item?.studentNameSurname}}</td>
-      <td>{{ item?.studentbirthdate | date:'dd-MM-YYYY' }}</td>
-      <td>{{ item?.studentGender === 0 ? 'Kız' : (item?.studentGender === 1 ? 'Erkek' :' ') }}</td>
-      <td>{{ item?.studentPassportNumber}}</td>
-      <td>{{item?.nationality === 1 ? 'Almanya Vatandaşı' : item?.nationality === 2 ? 'Türkiye Vatandaşı' :
-          (item.nationality === 3 ? 'ABD Vatandaşı' : (item?.nationality === 4 ? 'Fransa Vatandaşı' : ' '))}}</td>
-      <td>{{ item?.studentAddress}}</td>
-      <td>{{ item?.studentMobilePhoneNumberGermany}}</td>
-      <td>{{ item?.studentMobilePhoneNumberTurkey }}</td>
-      <td>{{item?.state?.name}}</td>
-      <td>{{item?.mosque?.name}}</td>
-      <td>{{item?.airport === 1 ? 'Düsseldor' : item?.airport === 2 ? 'Frankfurt' : (item?.airport === 3 ?
-          'Nürnberg' : (item?.airport === 4 ? 'Stutgart' : (item?.airport === 5 ? 'Berlin' : (item?.airport
-          === 6 ? 'Hamburg' : ' '))))}}</td>
-          <td><a href="https://portal.zsureisen.eu/{{item?.pasaportPath}}">Tıkla</a></td>
+    <td>{{i+1}}</td>
+    <td>{{ item?.personType=== 1 ? 'Öğrencinin annesiyim' : item?.personType === 2 ? 'Öğrencinin babasıyım' :
+      (item?.personType === 3 ? 'Cami din görevlisiyim' : (item?.personType === 4 ? 'Diğer' : ' '))}}</td>
+    <td>{{ item?.studentNameSurname}}</td>
+    <td>{{ item?.studentbirthdate | date:'dd-MM-YYYY' }}</td>
+    <td>{{ item?.studentGender === 0 ? 'Kız' : (item?.studentGender === 1 ? 'Erkek' :' ') }}</td>
+    <td>{{ item?.studentPassportNumber}}</td>
+    <td>{{item?.nationality === 1 ? 'Almanya Vatandaşı' : item?.nationality === 2 ? 'Türkiye Vatandaşı' :
+      (item.nationality === 3 ? 'ABD Vatandaşı' : (item?.nationality === 4 ? 'Fransa Vatandaşı' : ' '))}}</td>
+    <td>{{ item?.studentAddress}}</td>
+    <td>{{ item?.studentMobilePhoneNumberGermany}}</td>
+    <td>{{ item?.studentMobilePhoneNumberTurkey }}</td>
+    <td>{{item?.state?.name}}</td>
+    <td>{{item?.mosque?.name}}</td>
+    <td>
+      {{
+      item?.airport === 10 ? 'Düsseldorf veya Köln' :
+      item?.airport === 11 ? 'Frankfurt' :
+      item?.airport === 12 ? 'Stuttgart' :
+      item?.airport === 13 ? 'Hannover' :
+      item?.airport === 14 ? 'Hamburg' :
+      item?.airport === 15 ? 'Berlin' :
+      item?.airport === 16 ? 'Münih' :
+      item?.airport === 17 ? 'Nürnberg' :
+      ''
+      }}
+    </td>
 
-          <td><a href="https://portal.zsureisen.eu/{{item?.identificationPath}}">Tıkla</a></td>
+    <td><a href="https://portal.zsureisen.eu/{{item?.pasaportPath}}">Tıkla</a></td>
 
-          <td><a href="https://portal.zsureisen.eu/{{item?.receiptPath}}">Tıkla</a></td>
-          <td>{{item?.isPrice == false ? 'Hayır' : (item?.isPrice == true ? 'Evet' :' ') }}</td>
+    <td><a href="https://portal.zsureisen.eu/{{item?.identificationPath}}">Tıkla</a></td>
 
-      <!-- <td>{{item?.isPrice == false ? 'Hayır' : (item?.isPrice == true ? 'Evet' :' ') }}</td>
+    <td><a href="https://portal.zsureisen.eu/{{item?.receiptPath}}">Tıkla</a></td>
+    <td>{{item?.isPrice == false ? 'Hayır' : (item?.isPrice == true ? 'Evet' :' ') }}</td>
+
+    <!-- <td>{{item?.isPrice == false ? 'Hayır' : (item?.isPrice == true ? 'Evet' :' ') }}</td>
       <td>{{item?.studentFatherNameSurname}}</td>
       <td>{{ item?.studentFatherPhone }}</td>
       <td>{{ item?.studentMotherNameSurname}}</td>
@@ -161,8 +173,8 @@
       <td>{{ item?.transferFullName }}</td>
       <td>{{ item?.tranferDate | date:'dd-MM-YYYY' }}</td>
       <td>{{ item?.transferTransactionNumber}}</td> -->
-      
 
-        
+
+      
   </tr>
 </table>

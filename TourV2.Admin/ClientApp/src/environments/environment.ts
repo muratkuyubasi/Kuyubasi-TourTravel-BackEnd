@@ -6,11 +6,11 @@ export const environment = {
   production: false,
   
   // apiUrl: "https://localhost:7218/",
-  apiUrl: "https://proje10.vakifglobal.com/",
-  serverUrl: "https://proje10.vakifglobal.com/"
+  // apiUrl: "https://proje10.vakifglobal.com/",
+  // serverUrl: "https://proje10.vakifglobal.com/"
 
-  // apiUrl:"https://portal.zsureisen.eu/",
-  // serverUrl:"https://portal.zsureisen.eu/"
+  apiUrl:"https://portal.zsureisen.eu/",
+  serverUrl:"https://portal.zsureisen.eu/"
 };
 /*
  * For easier debugging in development mode, you can import the following file

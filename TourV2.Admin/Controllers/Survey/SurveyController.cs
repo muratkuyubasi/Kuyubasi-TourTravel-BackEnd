@@ -26,11 +26,6 @@ namespace TourV2.Admin.Controllers.Survey
             _period = period;
             _mapper = mapper;
         }
-
-
-     
-
-
         ///<summary>
         ///New Survey
         ///</summary>
@@ -53,3 +48,4 @@ namespace TourV2.Admin.Controllers.Survey
 
     }
 }
+

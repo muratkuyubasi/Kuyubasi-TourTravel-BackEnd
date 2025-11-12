@@ -1,5 +1,13 @@
 <app-breadcrumb [title]="'RESERVATIONS' | translate" [subTitle]="'RESERVATION_LIST' | translate"></app-breadcrumb>
 <div class="card recent-orders-box mb-30">
+    <div class="col-md-auto col-sm-auto">
+        <h4 class="widget-title">
+          <button class="btn btn-success btn-sm m-right-10" >
+            <i class="fa-solid fa-download"></i>
+            {{ 'EXPORT_EXCEL' | translate }}
+          </button>
+        </h4>
+      </div>
     <div class="card-header d-flex justify-content-between align-items-center">
         <h3>{{'RESERVATION_LIST' | translate}}</h3>
 
@@ -33,7 +41,7 @@
                 <tbody>
                     <tr *ngFor="let item of reservations">
                         <td class="name">{{item?.reservationCode}}</td>
-                        <td class="name">{{item?.contactFirstName}} {{item?.contactLastName}}</td>
+                        <td class="name">{{item?.contactFirstName}} {{item?.contactLastName }}</td>
                         <td class="name">{{item?.contactPhone}}</td>
                         <td class="name">{{item?.contactEmail}}</td>
                         <td class="name">{{item?.totalAmount}}</td>

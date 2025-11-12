@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -71,7 +72,8 @@ namespace TourV2.Admin.Controllers.Education
                 case 3: personType = "Cami din görevlisiyim"; break;
                 case 4: personType = "Diğer"; break;
             }
-            var message = $@"<p>Değerli {addEducationFormCommand.StudentNameSurname},<br>  Erdemli Gençlik Değerler Eğitimi programına başvurunuz alınmıştır. İlginiz için teşekkür ederiz.<br> Uçuş ve otel işlemleri için planlamalar yapıldığında sizi bilgilendireceğiz.<br>İyi günler dileriz.<br>Zsu Reisen </p>
+            var message = $@"<p>Değerli {addEducationFormCommand.StudentNameSurname},<br>  Erdemli Gençlik Değerler Eğitimi programına yapmış olduğunuz başvuru tarafımıza ulaşmıştır. İlginiz için teşekkür ederiz.
+<br>Program kurallarını içeren doküman ektedir. Bu dokümanı imzalayıp, program öncesinde sizinle irtibata geçecek olan grup hocamıza teslim etmenizi rica ederiz.<br>Saygılarımızla.<br>Zsu Reisen</p>
             <div style='display: grid'>
                 <table style='border-collapse: collapse; width: 100%;'>
 <tr>
@@ -88,6 +90,7 @@ namespace TourV2.Admin.Controllers.Education
                     </tr>
 <tr>
                         <td style='border: 1px solid black; padding: 8px; color: red;'>Öğrencinin Maili</td>
+                    </tr>
                     </tr>
                     <tr>
                         <td style='border: 1px solid black; padding: 8px;'>{addEducationFormCommand.StudentMail}</td>
@@ -116,6 +119,12 @@ namespace TourV2.Admin.Controllers.Education
             attachmentList.Add(new Attachment(_webHostEnvironment.WebRootPath + addEducationFormCommand.PasaportPath));
             attachmentList.Add(new Attachment(_webHostEnvironment.WebRootPath + addEducationFormCommand.IdentificationPath));
             attachmentList.Add(new Attachment(_webHostEnvironment.WebRootPath + addEducationFormCommand.ReceiptPath));
+            //attachmentList.Add(new Attachment(_webHostEnvironment.WebRootPath + "/Muvafakatname.pdf"));
+            //attachmentList.Add(new Attachment(_webHostEnvironment.WebRootPath + "/MUVAFAKATNAME-.pdf"));
+            attachmentList.Add(new Attachment(_webHostEnvironment.WebRootPath + "/5.+Degerler+Egitimi+Programi+Kurallari.pdf"));
+
+
+
 
             try
             {
